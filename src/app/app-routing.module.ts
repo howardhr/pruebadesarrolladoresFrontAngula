@@ -5,8 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ErrorComponent } from './error/error.component';
 import { DashboardLayoutComponent } from './layouts/dashboardlayout.component';
 import { MinComponent } from './layouts/min.component';
-import { LoginComponent } from './login/login.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
+
 
 
 const routes: Routes = [
@@ -22,20 +21,13 @@ const routes: Routes = [
         path: 'blank-page',
         component: BlankPageComponent
       },
-      {
-        path: 'user-profile',
-        component: UserProfileComponent
-      }
+     
     ]
   },
   {
     path: '',
     component: MinComponent,
     children: [
-      {
-        path: 'login',
-        component: LoginComponent
-      },
       {
         path: 'error',
         component: ErrorComponent

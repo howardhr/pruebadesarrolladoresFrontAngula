@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Estilo personalizado para las notificaciones */
+.ngx-toastr {
+  background-color: rgba(0, 128, 0, 0.8); /* Cambia los valores de color y opacidad según tus preferencias */
+  color: white; /* Color del texto */
+}

@@ -14,10 +14,13 @@ import { SidebarComponent } from './layouts/parts/sidebar.component';
 import { SidebaritemComponent, SidebaritemInnerComponent } from './layouts/parts/sidebaritem.component';
 import { BlankPageComponent } from './blank-page/blank-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginComponent } from './login/login.component';
 import { ErrorComponent } from './error/error.component';
 import { AppRoutingModule } from './app-routing.module';
-import { UserProfileComponent } from './user-profile/user-profile.component';
+import { LoginService } from '../../src/app/core/services/login.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { NgxToastNotifierModule } from 'ngx-toast-notifier';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -30,19 +33,32 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 	SidebaritemInnerComponent,
     BlankPageComponent,
     DashboardComponent,
-    LoginComponent,
+   
     ErrorComponent,
-    UserProfileComponent
+   
   ],
   imports: [
+   
     BrowserModule,
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
     TabsModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 3000, // Tiempo de duración de las notificaciones (en milisegundos)
+      positionClass: 'toast-top-right', // Posición de las notificaciones
+      preventDuplicates: true, // Evita que se muestren notificaciones duplicadas
+      closeButton: true // Muestra un botón de cierre en las notificaciones
+    })
+    
+   
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
